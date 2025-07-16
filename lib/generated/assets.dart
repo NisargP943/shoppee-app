@@ -31,9 +31,11 @@ class Assets {
   static const String fontsRalewayThin = 'assets/fonts/Raleway-Thin.ttf';
   static const String fontsRalewayThinItalic =
       'assets/fonts/Raleway-ThinItalic.ttf';
+  static const String imagesAuthBubble = 'assets/images/authBubble.png';
   static const String imagesBubbles = 'assets/images/Bubbles.png';
   static const String imagesButton = 'assets/images/Button.png';
   static const String imagesLoginBubbles = 'assets/images/loginBubbles.png';
   static const String imagesShoppeLogo = 'assets/images/shoppeLogo.png';
   static const String imagesUploadPhoto = 'assets/images/uploadPhoto.png';
+  static const String imagesUser = 'assets/images/user.png';
 }

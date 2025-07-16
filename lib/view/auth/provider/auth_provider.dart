@@ -7,17 +7,19 @@ import 'package:shoppe/model/login_response_model.dart';
 
 class AuthProvider extends ChangeNotifier {
   AuthApi authApi = AuthApi();
-  LoginResponseModel? loginResponseModel;
+  String errorMessage = "";
+  LoginResponseModel loginResponseModel = LoginResponseModel();
   Map<String, dynamic> dbData = {};
 
-  Future<LoginResponseModel?> loginApi() async {
+  Future<LoginResponseModel> loginApi(String username, String password) async {
     try {
-      final authResp = await authApi.loginApi('emilys', "emilyspass");
-      loginResponseModel = LoginResponseModel.fromJson(
-        jsonDecode(authResp.data),
+      final authResp = await authApi.loginApi(username, password);
+      loginResponseModel = loginResponseModelFromJson(
+        jsonEncode(authResp.data),
       );
       log("api success");
     } catch (e) {
+      errorMessage = e.toString();
       log(e.toString());
     }
     notifyListeners();

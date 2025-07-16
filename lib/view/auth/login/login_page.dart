@@ -1,15 +1,10 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:provider/provider.dart';
-import 'package:shoppe/data/db/db_helper.dart';
 import 'package:shoppe/generated/assets.dart';
 import 'package:shoppe/utils/colors.dart';
 import 'package:shoppe/utils/textstyles.dart';
 import 'package:shoppe/view/auth/password/password_page.dart';
-import 'package:shoppe/view/auth/provider/auth_provider.dart';
 import 'package:shoppe/widgets/app_button_widget.dart';
 import 'package:shoppe/widgets/app_text_widget.dart';
 import 'package:shoppe/widgets/app_textfield_widget.dart';
