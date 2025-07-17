@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:shoppe/generated/assets.dart';
 import 'package:shoppe/utils/colors.dart';
 import 'package:shoppe/utils/textstyles.dart';
+import 'package:shoppe/view/auth/forgot_password/forgot_password_page.dart';
 import 'package:shoppe/view/auth/provider/auth_provider.dart';
 import 'package:shoppe/widgets/app_text_widget.dart';
 
@@ -68,7 +69,16 @@ class _PasswordPageState extends State<PasswordPage> {
                   15.verticalSpace,
                   passwordFieldWidget(),
                   10.verticalSpace,
-                  AppTextWidget(text: "Forgot your password ?"),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => ForgotPasswordPage(),
+                        ),
+                      );
+                    },
+                    child: AppTextWidget(text: "Forgot your password ?"),
+                  ),
                   30.verticalSpace,
                 ],
               ),

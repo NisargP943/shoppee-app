@@ -34,6 +34,7 @@ class Assets {
   static const String imagesAuthBubble = 'assets/images/authBubble.png';
   static const String imagesBubbles = 'assets/images/Bubbles.png';
   static const String imagesButton = 'assets/images/Button.png';
+  static const String imagesForgotPassword = 'assets/images/forgotPassword.png';
   static const String imagesLoginBubbles = 'assets/images/loginBubbles.png';
   static const String imagesShoppeLogo = 'assets/images/shoppeLogo.png';
   static const String imagesUploadPhoto = 'assets/images/uploadPhoto.png';
