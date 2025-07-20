@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
+import 'package:shoppe/data/db/db_helper.dart';
 import 'package:shoppe/generated/assets.dart';
 import 'package:shoppe/utils/colors.dart';
 import 'package:shoppe/utils/textstyles.dart';
@@ -134,6 +135,7 @@ class _PasswordPageState extends State<PasswordPage> {
     final authRep = Provider.of<AuthProvider>(context, listen: false);
     await authRep.loginApi(widget.username, passwordController.text);
     if (authRep.loginResponseModel.username != null) {
+      await DbHelper.insertData(authRep.loginResponseModel);
       Fluttertoast.showToast(
         msg: "Welcome Back,${authRep.loginResponseModel.username}",
         toastLength: Toast.LENGTH_SHORT,

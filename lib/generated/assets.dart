@@ -35,8 +35,13 @@ class Assets {
   static const String imagesBubbles = 'assets/images/Bubbles.png';
   static const String imagesButton = 'assets/images/Button.png';
   static const String imagesForgotPassword = 'assets/images/forgotPassword.png';
+  static const String imagesFour = 'assets/images/four.jpg';
+  static const String imagesHelloBubble = 'assets/images/helloBubble.png';
   static const String imagesLoginBubbles = 'assets/images/loginBubbles.png';
+  static const String imagesOne = 'assets/images/one.jpg';
   static const String imagesShoppeLogo = 'assets/images/shoppeLogo.png';
+  static const String imagesThree = 'assets/images/three.jpg';
+  static const String imagesTwo = 'assets/images/two.jpg';
   static const String imagesUploadPhoto = 'assets/images/uploadPhoto.png';
   static const String imagesUser = 'assets/images/user.png';
 }
