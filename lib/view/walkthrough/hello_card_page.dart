@@ -3,9 +3,12 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:shoppe/generated/assets.dart';
 import 'package:shoppe/utils/colors.dart';
 import 'package:shoppe/utils/textstyles.dart';
+import 'package:shoppe/view/bottom_navigation/bottom_navigation.dart';
+import 'package:shoppe/widgets/app_button_widget.dart';
 import 'package:shoppe/widgets/app_text_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+///start
 class HelloCardPage extends StatefulWidget {
   const HelloCardPage({super.key});
 
@@ -77,6 +80,21 @@ class _HelloCardPageState extends State<HelloCardPage> {
                         10.verticalSpace,
                         subHeadingWidget(),
                         5.verticalSpace,
+                        index == images.length
+                            ? AppButtonWidget(
+                                text: "Start",
+                                onPressed: () {
+                                  ///Navigate to bottom navigation page
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          BottomNavigationPage(),
+                                    ),
+                                  );
+                                },
+                              )
+                            : SizedBox(),
+                        5.verticalSpace,
                       ],
                     ),
                   ),
@@ -124,3 +142,5 @@ class _HelloCardPageState extends State<HelloCardPage> {
     );
   }
 }
+
+///end
