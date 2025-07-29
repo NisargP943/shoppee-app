@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:shoppe/data/db/db_helper.dart';
+import 'package:shoppe/view/bottom_navigation/provider/bottom_navigation_provider.dart';
+import 'package:shoppe/view/home/provider/home_provider.dart';
 import 'package:shoppe/view/splash/splash_page.dart';
 
 import 'view/auth/provider/auth_provider.dart';
@@ -23,6 +25,8 @@ void main() async {
       MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (context) => AuthProvider()),
+          ChangeNotifierProvider(create: (context) => BottomProvider()),
+          ChangeNotifierProvider(create: (context) => HomeProvider()),
         ],
         child: MyApp(),
       ),
