@@ -5,6 +5,7 @@ import 'package:shoppe/utils/colors.dart';
 import 'package:shoppe/view/home/provider/home_provider.dart';
 import 'package:shoppe/widgets/loading_indicator_widget.dart';
 
+///start
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -32,24 +33,26 @@ class _HomePageState extends State<HomePage> {
                   50.verticalSpace,
                   searchRow(context),
                   10.verticalSpace,
-                  Expanded(
-                    child: Consumer<HomeProvider>(
-                      builder: (context, value, child) => GridView.builder(
-                        scrollDirection: Axis.horizontal,
-                        itemCount: value.productCategory.length,
-                        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                        ),
-                        itemBuilder: (context, index) => Text(
-                          value.productCategory[index] ?? "NO",
-                          maxLines: 1,
-                        ),
-                      ),
-                    ),
-                  ),
+                  categoriesGridView(),
                 ],
               ),
             ),
+    );
+  }
+
+  Widget categoriesGridView() {
+    return Expanded(
+      child: Consumer<HomeProvider>(
+        builder: (context, value, child) => GridView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: value.productCategory.length,
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+          ),
+          itemBuilder: (context, index) =>
+              Text(value.productCategory[index] ?? "NO", maxLines: 1),
+        ),
+      ),
     );
   }
 
@@ -89,3 +92,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+
+//end
