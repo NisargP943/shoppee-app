@@ -5,7 +5,7 @@ class AuthApi {
 
   Future loginApi(String username, String password) async {
     final authResp = await dio.post(
-      "/auth/login",
+      "https://dummyjson.com/auth/login",
       data: {"username": username, "password": password},
     );
     return authResp;
