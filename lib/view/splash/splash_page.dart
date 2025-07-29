@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:shoppe/data/db/db_helper.dart';
 import 'package:shoppe/generated/assets.dart';
+import 'package:shoppe/view/bottom_navigation/bottom_navigation.dart';
 import 'package:shoppe/view/walkthrough/walkthrough_page.dart';
 
 /// start region
@@ -27,10 +29,15 @@ class _SplashPageState extends State<SplashPage> {
 
   void initSettings() {
     Future.delayed(Duration(seconds: 2), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => WalkthroughPage()),
-      );
+      DbHelper.readData() == null
+          ? Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => WalkthroughPage()),
+            )
+          : Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => BottomNavigationPage()),
+            );
     });
   }
 }
