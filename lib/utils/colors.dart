@@ -10,5 +10,5 @@ class AppColor {
   static Color red = Colors.red;
   static Color grey = Colors.grey;
   static Color greyShadow = Color(0xff707070);
-  static Color lightGrey = Colors.grey.withValues(alpha: 0.1);
+  static Color lightGrey = Colors.grey.withValues(alpha: 0.3);
 }
