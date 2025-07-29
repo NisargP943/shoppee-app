@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:fluttertoast/fluttertoast.dart';
 import 'package:pinput/pinput.dart';
 import 'package:provider/provider.dart';
 import 'package:shoppe/data/db/db_helper.dart';
@@ -9,6 +8,7 @@ import 'package:shoppe/utils/colors.dart';
 import 'package:shoppe/utils/textstyles.dart';
 import 'package:shoppe/view/auth/forgot_password/forgot_password_page.dart';
 import 'package:shoppe/view/auth/provider/auth_provider.dart';
+import 'package:shoppe/view/bottom_navigation/bottom_navigation.dart';
 import 'package:shoppe/widgets/app_text_widget.dart';
 
 /// start region
@@ -136,9 +136,10 @@ class _PasswordPageState extends State<PasswordPage> {
     await authRep.loginApi(widget.username, passwordController.text);
     if (authRep.loginResponseModel.username != null) {
       await DbHelper.insertData(authRep.loginResponseModel);
-      Fluttertoast.showToast(
-        msg: "Welcome Back,${authRep.loginResponseModel.username}",
-        toastLength: Toast.LENGTH_SHORT,
+
+      ///Navigating to bottom navigation page
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => BottomNavigationPage()),
       );
     }
   }
